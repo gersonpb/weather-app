@@ -12,7 +12,7 @@ import { WeatherDatas } from 'src/app/models/interfaces/WeatherDatas';
 export class WeatherHomeComponent implements OnInit, OnDestroy {
   private readonly destroy$: Subject<void> = new Subject();
 
-  initialCityName = 'Três Lagoas';
+  initialCityName = 'São Paulo';
   weatherDatas!: WeatherDatas;
   searchIcon = faMagnifyingGlass;
 
@@ -39,6 +39,7 @@ export class WeatherHomeComponent implements OnInit, OnDestroy {
     this.getWeatherDatas(this.initialCityName);
     this.initialCityName = '';
   }
+
   ngOnDestroy(): void {
       this.destroy$.next();
       this.destroy$.complete();
